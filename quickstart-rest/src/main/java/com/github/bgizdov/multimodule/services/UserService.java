@@ -1,14 +1,12 @@
 package com.github.bgizdov.multimodule.services;
 
 import com.github.bgizdov.multimodule.entities.User;
-import javax.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
 public class UserService {
   public User getUser() {
-    var user = new User();
-    user.setId(1);
-    user.setUsername("foobar");
+    var user = new User(1, "foobar", "baz");
     return user;
   }
 }
