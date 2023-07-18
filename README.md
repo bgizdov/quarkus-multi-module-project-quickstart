@@ -1,6 +1,6 @@
-# quarkus-2-multi-module-project-quickstart Project
+# quarkus-3-multi-module-project-quickstart Project
 
-Using lombok, jandex index for indexing modules, Quarkus 2.4.2.Final.
+Using lombok, jandex index for indexing modules, Quarkus 3.2.
 
 It contains two modules quickstart-core and quickstart-rest, but it can be separated to more
 modules (html, runner, services, etc.)
