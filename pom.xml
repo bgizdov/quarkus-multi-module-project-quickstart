@@ -51,9 +51,9 @@
         <version>${quarkus.platform.version}</version>
       </plugin>
       <plugin>
-        <groupId>org.jboss.jandex</groupId>
+        <groupId>io.smallrye</groupId>
         <artifactId>jandex-maven-plugin</artifactId>
-        <version>1.2.1</version>
+        <version>3.2.0</version>
         <executions>
           <execution>
             <id>make-index</id>
