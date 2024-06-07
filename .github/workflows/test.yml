@@ -1,0 +1,56 @@
+name: Run tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    # TODO: Good enough to download the dependencies and
+    # won't spend much of your GitHub Actions free tier
+    # when the last step hangs. 
+    timeout-minutes: 5
+
+    strategy:
+      matrix:
+        java-version: [17]
+
+    env:
+      MAVEN_OPTS: >-
+        -Dhttps.protocols=TLSv1.2
+        -Dmaven.repo.local=.m2/repository
+        -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=WARN
+        -Dorg.slf4j.simpleLogger.showDateTime=true
+        -Djava.awt.headless=true
+      MAVEN_CLI_OPTS: >-
+        --batch-mode
+        --errors
+        --fail-at-end
+        --show-version
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up JDK ${{ matrix.java-version }}
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: ${{ matrix.java-version }}
+        cache: maven
+
+    - name: Cache Maven repository
+      uses: actions/cache@v4
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-maven-
+    
+    # TODO: Convert this to ./mvnw test otherwise the CI will hang.
+    - name: Run tests
+      run: ./mvnw quarkus:test
