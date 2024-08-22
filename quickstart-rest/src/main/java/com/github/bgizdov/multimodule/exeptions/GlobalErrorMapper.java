@@ -1,7 +1,6 @@
 package com.github.bgizdov.multimodule.exeptions;
 
 import io.quarkus.security.ForbiddenException;
-import io.quarkus.security.UnauthorizedException;
 import jakarta.ws.rs.NotAuthorizedException;
 import jakarta.ws.rs.core.Response;
 import org.jboss.resteasy.reactive.RestResponse;
@@ -17,21 +16,13 @@ public class GlobalErrorMapper {
    * @return a RestResponse containing the error details
    */
   @ServerExceptionMapper
-  public RestResponse<ErrorResponse> mapException(Exception exception) {
+  public RestResponse<ErrorResponse> mapException(QuickstartException exception) {
     int code = this.getCodeFromException(exception);
     String status = "internal_server_error";
     String message = "Internal server error logged. Please try again later.";
     if (exception instanceof UserNotFoundException) {
       code = 404;
       status = "user_not_found";
-      message = exception.getMessage();
-    } else if (exception instanceof ForbiddenException
-        || exception instanceof jakarta.ws.rs.ForbiddenException) {
-      status = "forbidden";
-      message = exception.getMessage();
-    } else if (exception instanceof NotAuthorizedException
-        || exception instanceof UnauthorizedException) {
-      status = "unauthorized";
       message = exception.getMessage();
     }
 
