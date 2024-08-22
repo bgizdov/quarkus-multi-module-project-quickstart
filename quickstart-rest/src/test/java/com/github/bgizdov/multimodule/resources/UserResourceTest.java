@@ -20,6 +20,6 @@ class UserResourceTest {
         .assertThat()
         .contentType("application/json")
         .body("id", is(1))
-        .body("username", is("foobar"));
+        .body("userName", is("foobar"));
   }
 }
