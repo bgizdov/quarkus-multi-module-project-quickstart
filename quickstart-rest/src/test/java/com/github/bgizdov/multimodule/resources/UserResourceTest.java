@@ -10,16 +10,20 @@ import org.junit.jupiter.api.Test;
 class UserResourceTest {
 
   @Test
-  void helloTest() {
-    given().accept("application/json")
+  void getUserByIdTest() {
+    given()
+        .accept("application/json")
         .header("Content-type", "application/json")
-        .get("/users/hello")
+        .get("/users/1")
         .then()
-        .log().body()
+        .log()
+        .body()
         .statusCode(200)
         .assertThat()
         .contentType("application/json")
         .body("id", is(1))
-        .body("userName", is("foobar"));
+        .body("userName", is("alices"))
+        .body("firstName", is("Alice"))
+        .body("lastName", is("Smith"));
   }
 }
