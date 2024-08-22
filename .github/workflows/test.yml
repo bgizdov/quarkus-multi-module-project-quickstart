@@ -53,4 +53,4 @@ jobs:
     
     # TODO: Convert this to ./mvnw test otherwise the CI will hang.
     - name: Run tests
-      run: ./mvnw quarkus:test
+      run: ./mvnw clean verify
