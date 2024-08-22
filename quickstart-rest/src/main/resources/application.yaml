@@ -1,0 +1,4 @@
+quickstart:
+  common:
+    greeting:
+      message: Hello %s, from Rest config!

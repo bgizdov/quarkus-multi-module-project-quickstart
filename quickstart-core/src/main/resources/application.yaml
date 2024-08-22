@@ -1,0 +1,7 @@
+quickstart:
+  core:
+    greeting:
+      message: Hello %s, from Core!
+  common:
+    greeting:
+      message: Hello %s, from Core config!

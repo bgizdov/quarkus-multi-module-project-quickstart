@@ -1,4 +1,4 @@
 package com.github.bgizdov.multimodule.entities;
 
-public record User(int id, String username, String lastName) {
+public record User(int id, String userName, String firstName, String lastName) {
 }
