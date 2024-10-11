@@ -15,7 +15,7 @@ Additional modules can be easily incorporated, such as HTML rendering, runners, 
 
 Modules can reside in separate Git repositories, allowing for flexible management using Git submodules.
 
-# Quarkus Project
+## Quarkus Info
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
