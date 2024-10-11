@@ -1,6 +1,3 @@
-Here’s an improved GitHub description for your project:
-
-
 # Quarkus 3 Multi-Module Project Quickstart
 
 This repository provides a quickstart template for building a multi-module project using Quarkus 3.15 LTS, featuring Lombok and Jandex. 
