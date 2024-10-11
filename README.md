@@ -1,9 +1,24 @@
-# quarkus-3-multi-module-project-quickstart Project
+Here’s an improved GitHub description for your project:
 
-Using lombok, jandex index for indexing modules, Quarkus 3.15 LTS.
 
-It contains two modules quickstart-core and quickstart-rest, but it can be separated to more
-modules (html, runner, services, etc.)
+# Quarkus 3 Multi-Module Project Quickstart
+
+This repository provides a quickstart template for building a multi-module project using Quarkus 3.15 LTS, featuring Lombok and Jandex. 
+
+## Project Structure
+
+The project is structured into two main modules:
+
+- quickstart-core: Contains the core functionality and business logic.
+- quickstart-rest: Exposes RESTful APIs for client interactions.
+
+Additional modules can be easily incorporated, such as HTML rendering, runners, and various services.
+
+## Git Repository Management
+
+Modules can reside in separate Git repositories, allowing for flexible management using Git submodules.
+
+# Quarkus Project
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
