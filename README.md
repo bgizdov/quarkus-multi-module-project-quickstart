@@ -1,6 +1,6 @@
 # Quarkus 3 Multi-Module Project Quickstart
 
-This repository provides a quickstart template for building a multi-module project using Quarkus 3.20 LTS, featuring Lombok and Jandex. 
+This repository provides a quickstart template for building a multi-module project using Quarkus 3.27 LTS, featuring Lombok and Jandex. 
 
 ## Project Structure
 
