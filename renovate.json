@@ -5,7 +5,7 @@
     {
       "matchPackagePrefixes": ["io.quarkus"],
       "versionStrategy": "fixed",
-      "version": "=3.27.*",
+      "versionConstraint": "=3.27.*",
       "groupName": "quarkus",
       "description": "Pin Quarkus to 3.27 LTS"
     }
